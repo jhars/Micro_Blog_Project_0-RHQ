@@ -13,12 +13,14 @@ var ForumPost = function (username, post){
     new ForumPost('madbro', 'buy food'),
     new ForumPost('klontz', 'remember to sleep!')
   ];
-  
+
+
+//----------Save Prototype to Array of posts-------------// 
 ForumPost.prototype.saveArray = function() {
 	ForumPost.all.push(this);
 }
 
-
+//----------Render Post Prototype to HTML-------------// 
 ForumPost.prototype.renderTemplate = function() {
 var $post = $(postTemplate(this));
     this.index = ForumPost.all.indexOf(this);
@@ -26,7 +28,7 @@ var $post = $(postTemplate(this));
     $blogPostList.append($post);
   };
 
-
+//-------------------set up variables AND TEMPLATE-----------//
 var $newPost= $('#new-post');
 var $blogPostList=$('#blog-post-list');
 var postTemplate = _.template($('#post-template').html());
@@ -35,7 +37,7 @@ var postTemplate = _.template($('#post-template').html());
     blogpost.renderTemplate();
   });
 
-
+//------------------SUBMIT BUTTON FUNCTION---------------//
 $newPost.on('submit', function (event) {
 	event.preventDefault();
 
