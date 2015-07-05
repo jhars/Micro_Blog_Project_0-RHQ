@@ -6,8 +6,14 @@ var ForumPost = function (username, post){
 	this.post = post;
 }
 
-ForumPost.all = [];
+//-------array of posts----------//
 
+  ForumPost.all = [
+    new ForumPost('jhars', 'clean clothes'),
+    new ForumPost('madbro', 'buy food'),
+    new ForumPost('klontz', 'remember to sleep!')
+  ];
+  
 ForumPost.prototype.saveArray = function() {
 	ForumPost.all.push(this);
 }
@@ -25,8 +31,8 @@ var $newPost= $('#new-post');
 var $blogPostList=$('#blog-post-list');
 var postTemplate = _.template($('#post-template').html());
 
-  _.each(this.key, function (post, index) {
-    post.render();
+  _.each(ForumPost.all, function (blogpost, index) {
+    blogpost.renderTemplate();
   });
 
 
