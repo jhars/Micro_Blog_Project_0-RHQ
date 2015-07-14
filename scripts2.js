@@ -2,8 +2,9 @@ $(function(){
 
 //---------Post Constructor-----------//
 var ForumPost = function (username, post){
-  this.username = username;
-  this.post = post;
+	this.username = username;
+	this.post = post;
+  this.comments = [];
 }
 
 //-------array of posts----------//
@@ -17,7 +18,7 @@ var ForumPost = function (username, post){
 
 //----------Save Prototype to Array of posts-------------// 
 ForumPost.prototype.saveArray = function() {
-  ForumPost.all.push(this);
+	ForumPost.all.push(this);
 }
 
 //----------Render Post Prototype to HTML-------------// 
@@ -39,10 +40,10 @@ var postTemplate = _.template($('#post-template').html());
 
 //------------------SUBMIT BUTTON FUNCTION---------------//
 $newPost.on('submit', function (event) {
-  event.preventDefault();
+	event.preventDefault();
 
 
-  var user = $('#user-name').val();
+	var user = $('#user-name').val();
     var postContent = $('#blog-post').val();
     var forumPost = new ForumPost(user, postContent);
 
@@ -59,4 +60,75 @@ $newPost.on('submit', function (event) {
 
 
 
-  });
+$('#exampleModal').on('show.bs.modal', function (event) {
+  var button = $(event.relatedTarget) // Button that triggered the modal
+  var recipient = button.data('whatever') // Extract info from data-* attributes
+  // If necessary, you could initiate an AJAX request here (and then do the updating in a callback).
+  // Update the modal's content. We'll use jQuery here, but you could use a data binding library or other methods instead.
+  var modal = $(this)
+  modal.find('.modal-title').text('New message to ' + recipient)
+  modal.find('.modal-body input').val(recipient)
+})
+
+
+
+
+
+	});
+
+
+
+//-------------Blog To-Dos----------------//
+
+// Comments
+// add button on posts to pop-out modal
+// add modal from bootstrap
+// make template that inserts under POSTS
+
+
+
+
+
+
+// Post Count
+
+// Modal Object, localStorage
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

@@ -8,11 +8,11 @@ Make a form to add new posts to the list using Underscore.js templates and jQuer
 Be sure to comment your code, and make the code clean (mind spacing and indentation).
 Stretch Challenges (optional)
 
-Add a count of how many posts have been posted that updates every time a new post is created.
-Add a Bootstrap JS component like a tooltip.
-Add more custom CSS to make it very beautiful :)
-Add Model object that saves posts to localStorage.
-Add comments on posts.
+1. Add a count of how many posts have been posted that updates every time a new post is created.
+2. Add a Bootstrap JS component like a tooltip.
+3. Add more custom CSS to make it very beautiful :)
+4. Add Model object that saves posts to localStorage.
+5. Add comments on posts.
 
 
 
